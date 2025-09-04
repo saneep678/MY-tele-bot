@@ -1,3 +1,4 @@
+import os
 import logging
 import requests
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -10,11 +11,8 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Replace with your bot's API token from BotFather
-TOKEN = "8411608657:AAFNPTPhVFOAM-AF05LeKlEnh8ktkE8Ptg0"
-
-# Replace with your TMDb API key
-TMDB_API_KEY = "2ddac53ac55e6a8f2525331b2f7ee0ae"
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 
 # Shorthand to Full Name mappings for Print
 print_map = {
@@ -149,4 +147,5 @@ def main() -> None:
     application.run_polling()
 
 if __name__ == "__main__":
+
     main()
