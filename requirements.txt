@@ -1,2 +1,9 @@
 python-telegram-bot
+
 requests
+
+pyrogram
+
+nest_asyncio
+
+Flask
